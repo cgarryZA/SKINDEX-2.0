@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKINDEX Docs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SKINDEX Documentation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="vault.html">Vault</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>What is SKINDEX?</h2>
+    <p>SKINDEX is a token backed by a vault of CSGO skins. It operates as a decentralized, ETF-style asset on Ethereum, providing trustless and liquid exposure to in-game items.</p>
+  </section>
+
+  <section>
+    <h2>Tokenomics</h2>
+    <ul>
+      <li>Mint with ETH</li>
+      <li>Burn to redeem ETH</li>
+      <li>Maximum Fees: 1% developer, 5% mint, 5% burn (adaptive, further details on the roadmap)</li>
+      <li>Burn fees are high at first to encourage long term holding</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How Minting Works</h2>
+    <p>Users can send ETH to the contract. The contract mints SKINDEX based on NAV minus mint fee and developer fee.</p>
+  </section>
+
+  <section>
+    <h2>How Burning Works</h2>
+    <p>Users can burn SKINDEX to redeem their share of the Vault value, calculated from NAV and minus burn fee. Redemption pulls from the ETH reserve pool.</p>
+  </section>
+
+  <section>
+    <h2>Price Stabilization (Coming Soon)</h2>
+    <p>When SKINDEX trades below NAV, the protocol uses BTC to buy back and reduce supply. When above, it sells into the market to capture value and grow the skin vault.</p>
+  </section>
+
+  <section>
+    <h2>Oracle & Transparency</h2>
+    <p>All skin deposits are tracked on-chain via bot-oracle reports. BTC and ETH prices come from Chainlink or similar. Vault values and composition are always public and queryable.</p>
+  </section>
+
+  <section>
+    <h2>Security</h2>
+    <ul>
+      <li>Open-source contracts</li>
+      <li>Audits planned before mainnet</li>
+      <li>Bot-controlled skin custody with smart contract access only</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SKINDEX</p>
+    <a href="https://github.com/skindex" target="_blank">View on GitHub</a>
+  </footer>
+</body>
+</html>

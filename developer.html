@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKINDEX Developer Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Developer Portal</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="docs.html">Docs</a>
+      <a href="vault.html">Vault</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Contract Addresses</h2>
+    <ul>
+      <li><strong>SKINDEX Token:</strong> <code>0x2E22a92eF5562688B97df46d8AAa01Ad86597F66</code></li>
+      <li><strong>SkinVault:</strong> <code>0xa82832a77C06e148560470d6c2efBAb0B3B332Bb</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ABIs</h2>
+    <p>Download the latest contract ABIs:</p>
+    <ul>
+      <li><a href="/abi/SKINDEX.json" download>SKINDEX.json</a></li>
+      <li><a href="/abi/SkinVault.json" download>SkinVault.json</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Oracle Integration</h2>
+    <p>The oracle updates vault values off-chain and calls <code>setSkinsValue()</code> and <code>setBtcReserveValue()</code> on the SkinVault contract.</p>
+    <p>Coming soon: API for skin valuation.</p>
+  </section>
+
+  <section>
+    <h2>GitHub</h2>
+    <p>Source code available at: <a href="https://github.com/skindex" target="_blank">github.com/skindex</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SKINDEX</p>
+    <a href="mailto:dev@skindex.io">Contact Developer Support</a>
+  </footer>
+</body>
+</html>

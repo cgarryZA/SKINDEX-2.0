@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d0f1a;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+header.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 6rem;
+  background: radial-gradient(circle at top left, #1e2a3a, #05192b);
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-text button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background: #3b82f6;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.hero-graphic img {
+  max-width: 300px;
+}
+
+section {
+  padding: 4rem 6rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.steps {
+  display: flex;
+  gap: 2rem;
+}
+
+.step {
+  background: #1f2937;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  flex: 1;
+}
+
+.why-skindex ul,
+.what-is ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-skindex li,
+.what-is li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.why-skindex li::before,
+.what-is li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+}
+
+.cta {
+  text-align: center;
+  background: #111827;
+}
+
+.cta button {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+footer {
+  background: #0f172a;
+  padding: 2rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer nav a {
+  margin-left: 1.5rem;
+  color: #93c5fd;
+  text-decoration: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKINDEX Vault</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/vault.js"></script>
+</head>
+<body onload="initVaultPage()">
+  <header>
+    <h1>Vault Overview</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Vault Composition</h2>
+    <p>Total Vault Value: <span id="totalNAV">-</span> ETH</p>
+    <p>Skin Valuation: <span id="skinValue">-</span> ETH</p>
+    <p>ETH Balance: <span id="ethBalance">-</span> ETH</p>
+    <p>BTC Reserve: <span id="btcReserve">-</span> BTC</p>
+  </section>
+
+  <section>
+    <h2>Steam Inventory</h2>
+    <p>SkinVault Steam Bot Inventory:</p>
+    <div id="inventory">
+      <p>Loading inventory...</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SKINDEX</p>
+    <a href="https://etherscan.io/address/0xa82832a77C06e148560470d6c2efBAb0B3B332Bb" target="_blank">View Contract on Etherscan</a>
+  </footer>
+</body>
+</html>

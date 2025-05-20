@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKINDEX Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+</head>
+<body onload="dashboardInit()">
+  <header>
+    <h1>SKINDEX Dashboard</h1>
+    <div id="account">Not connected</div>
+  </header>
+
+  <section id="stats">
+    <h2>Live Stats</h2>
+    <p>SKINDEX Price: <span id="navPerToken">-</span> ETH</p>
+    <p>Total Supply: <span id="totalSupply">-</span> SKINDEX</p>
+
+    <h3>Your Portfolio</h3>
+    <p>Your SKINDEX Balance: <span id="userSK">-</span></p>
+    <p>Your Vault Value: <span id="userValue">-</span> ETH</p>
+
+    <h3>Vault Composition</h3>
+    <p>Vault ETH: <span id="ethBalance">-</span></p>
+    <p>Vault BTC: <span id="vaultBTC">-</span></p>
+    <p>Vault Skins: <span id="vaultSkins">-</span></p>
+    <p>Vault SKINDEX: <span id="vaultSK">-</span></p>
+
+    <canvas id="poolChart" style="max-width: 400px; margin-top: 2rem;"></canvas>
+  </section>
+
+  <section id="userControls">
+    <h2>Mint / Burn</h2>
+    <label>Deposit ETH to Mint SKINDEX:</label>
+    <input id="mintAmt" type="number" placeholder="ETH amount" step="any" />
+    <button id="mintBtn">Mint</button>
+
+    <label>Burn SKINDEX to Redeem:</label>
+    <input id="burnAmt" type="number" placeholder="SKINDEX amount" step="any" />
+    <button id="burnBtn">Burn</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SKINDEX</p>
+    <a href="index.html">Back to Home</a>
+  </footer>
+</body>
+</html>
