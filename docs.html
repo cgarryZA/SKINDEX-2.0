@@ -7,18 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>SKINDEX Documentation</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="vault.html">Vault</a>
-    </nav>
-  </header>
+  <div id="header-placeholder"></div>
 
   <section>
     <h2>What is SKINDEX?</h2>
-    <p>SKINDEX is a token backed by a vault of CSGO skins. It operates as a decentralized, ETF-style asset on Ethereum, providing trustless and liquid exposure to in-game items.</p>
+    <p>SKINDEX is a token that tracks the Counter Strike skin market. This is maintained by strict 1:1 backing. It operates as a decentralized, ETF-style asset on Ethereum, providing trustless and liquid exposure to in-game items.</p>
   </section>
 
   <section>
@@ -42,13 +35,19 @@
   </section>
 
   <section>
-    <h2>Price Stabilization (Coming Soon)</h2>
-    <p>When SKINDEX trades below NAV, the protocol uses BTC to buy back and reduce supply. When above, it sells into the market to capture value and grow the skin vault.</p>
+    <h2>Pools</h2>
+    <p>The Vault contains 3 pools. Counter Strike Skins, ETH, and BTC. ETH is deposited into the contract. This ETH is then used to purchase skins or BTC based on predefined Pool Distribution Algorithms.</p>
+    <p>The BTC is to maintain liquidity in the contract to act as a buffer for withdrawals to allow time for selling skins.</p>
   </section>
 
   <section>
     <h2>Oracle & Transparency</h2>
     <p>All skin deposits are tracked on-chain via bot-oracle reports. BTC and ETH prices come from Chainlink or similar. Vault values and composition are always public and queryable.</p>
+  </section>  
+
+  <section>
+    <h2>Price Stabilization (Coming Soon)</h2>
+    <p>When SKINDEX trades below NAV, the protocol uses BTC to buy back and reduce supply. When above, it sells into the market to capture value and grow the skin vault.</p>
   </section>
 
   <section>
@@ -59,10 +58,17 @@
       <li>Bot-controlled skin custody with smart contract access only</li>
     </ul>
   </section>
-
-  <footer>
-    <p>&copy; 2025 SKINDEX</p>
-    <a href="https://github.com/skindex" target="_blank">View on GitHub</a>
-  </footer>
 </body>
+<div id="footer-placeholder"></div>
 </html>
+<script>
+// simple client‐side include
+async function includeHTML(id, url) {
+  const el = document.getElementById(id);
+  const res = await fetch(url);
+  el.innerHTML = await res.text();
+}
+
+includeHTML('header-placeholder', 'header.html');
+includeHTML('footer-placeholder', 'footer.html');
+</script>
