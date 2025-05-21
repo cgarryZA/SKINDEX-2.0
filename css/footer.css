@@ -1,0 +1,21 @@
+/* Footer */
+.site-footer {
+    background: #0f172a;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-nav a {
+    margin-left: 1rem;
+    color: #93c5fd;
+    text-decoration: none;
+  }
+  
+  .footer-nav a:hover {
+    text-decoration: underline;
+  }

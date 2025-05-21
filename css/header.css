@@ -1,0 +1,32 @@
+/* Header */
+.site-header {
+    background: #111827;
+    padding: 1rem 0;
+}
+
+.site-header .logo img {
+    height: 75px;
+}
+
+  /* shared styles */
+.container {
+    max-width: 1200px;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+  }
+  .main-nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .main-nav a:hover {
+    color: #3b82f6;
+  }

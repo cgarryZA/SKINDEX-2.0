@@ -1,0 +1,72 @@
+.vault-banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.vault-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.vault-banner {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0;                     /* vertical space for cards */
+  background: url('../images/vault3.png') center/cover no-repeat;
+}
+
+.vault-banner::before {
+  content: '';
+  position: absolute;                 
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);         /* dark overlay for contrast */
+  z-index: 1;
+}
+
+.vault-overlay {
+  position: relative;                  
+  z-index: 2;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Responsive: stack cards on smaller screens */
+@media (max-width: 768px) {
+  .vault-overlay {
+    flex-direction: column;
+  }
+}
+
+/* Card styles */
+.vault-card {
+  background: rgba(31, 41, 55, 0.85);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.card-info .card-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card-info .card-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+

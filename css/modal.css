@@ -1,0 +1,36 @@
+/* modal backdrop */
+.modal {
+  display: none;               /* hidden by default */
+  position: fixed;
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0,0,0,0.6);
+  justify-content: center;     /* flex centering */
+  align-items: center;
+  z-index: 999;
+}
+
+/* modal panel */
+.modal-content {
+  background: #111827;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: .5rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+/* close button */
+.modal-close {
+  position: absolute;
+  top: .5rem;
+  right: .75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aaa;
+  transition: color .2s;
+}
+
+.modal-close:hover {
+  color: #fff;
+}

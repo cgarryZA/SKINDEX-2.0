@@ -3,41 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKINDEX - CSGO Skin ETF</title>
+  <title>SKINDEX – CSGO Skin ETF</title>
   <link rel="stylesheet" href="style.css">
+
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/vault-assets.js"></script>
+  <script src="js/vault.js"></script>
+  <script src="js/contract.js"></script>
+  <script src="js/contract-functions.js"></script>
 </head>
 <body onload="initVaultPage()">
+  <!-- header include -->
   <div id="header-placeholder"></div>
 
-  <section>
-    <h2>Vault Composition</h2>
-    <p>Total Vault Value: <span id="totalNAV">-</span> ETH</p>
-    <p>Skin Valuation: <span id="skinValue">-</span> ETH</p>
-    <p>ETH Balance: <span id="ethBalance">-</span> ETH</p>
-    <p>BTC Reserve: <span id="btcReserve">-</span> BTC</p>
-  </section>
+  <div id="vault-assets-placeholder"></div>
 
-  <section>
-    <h2>Steam Inventory</h2>
-    <p>SkinVault Steam Bot Inventory:</p>
-    <div id="inventory">
-      <p>Loading inventory...</p>
-    </div>
-  </section>
+  <div id="vault-contents-placeholder"></div>
 
+  <div id="steam-inventory-placeholder"></div>
+
+  <div id="modal-placeholder"></div>
+
+  <!-- footer include -->
+  <div id="footer-placeholder"></div>
 </body>
-<div id="footer-placeholder"></div>
 </html>
-<script>
-// simple client‐side include
-async function includeHTML(id, url) {
-  const el = document.getElementById(id);
-  const res = await fetch(url);
-  el.innerHTML = await res.text();
-}
-
-includeHTML('header-placeholder', 'header.html');
-includeHTML('footer-placeholder', 'footer.html');
-</script>
