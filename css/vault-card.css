@@ -70,3 +70,186 @@
   opacity: 0.75;
 }
 
+
+/* make cards feel clickable */
+.vault-contents-card {
+  background: #1f2937;
+  border-radius: .75rem;
+  padding: 1.5rem;
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+
+/* Card styles */
+.vault-contents-card {
+  background: rgba(31, 41, 55, 0.85);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vault-contents-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.vault-contents.container2 {
+  pointer-events: none;
+}
+
+/* 2) Re-enable pointer events on the cards */
+.vault-contents-card {
+  pointer-events: auto;
+  position: relative;  /* create its own stacking context */
+  z-index: 1;          /* ensure cards sit above any wrapper pseudo-elements */
+}
+
+/* 3) (Optional) If your container2 class injects a ::before overlay, explicitly disable it */
+.vault-contents.container2::before {
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Modal Overlay (backdrop) */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-overlay.active {
+  display: flex;
+}
+
+/* Modal Window */
+.modal {
+  background: #1f2937;        /* your dark card background */
+  color: #e5e7eb;             /* light gray text */
+  border-radius: 0.75rem;     /* match card rounding */
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #374151; /* darker divider */
+}
+.modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f9fafb; /* near-white */
+}
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #f3f4f6;
+}
+
+/* Body */
+.modal-body {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+/* Section title inside modal */
+.modal-body h3 {
+  margin-top: 0;
+  color: #f9fafb;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Graph container */
+.modal-body .chart-container {
+  background: #111827;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  /* your chart (canvas/svg) will fill this */
+}
+
+/* Items grid */
+.modal-body .items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+/* Each item card inside modal */
+.modal-body .items-grid a {
+  display: block;
+  background: #374151;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+  padding: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.modal-body .items-grid a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Item image */
+.modal-body .items-grid img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+/* Item label (optional) */
+.modal-body .items-grid .item-name {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer */
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #374151;
+  text-align: right;
+}
+.modal-footer button {
+  background: #2563eb;
+  color: #f9fafb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modal-footer button:hover {
+  background: #1e40af;
+}
