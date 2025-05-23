@@ -3,7 +3,7 @@
 async function initVaultPage() {
   // 1) Inject HTML + CSS (including vault-contents and the modal)
   await includeComponent('header-placeholder',         '/html-components/header.html',         'css/header.css');
-  await includeComponent('vault-assets-placeholder',   '/html-components/vault-assets.html',   'css/vault-card.css');
+  //await includeComponent('vault-assets-placeholder',   '/html-components/vault-assets.html',   'css/vault-card.css');
   //await includeComponent('vault-contents-placeholder', '/html-components/vault-contents.html','css/vault-contents-card.css');
   //await includeComponent('modal-placeholder',          '/html-components/modal.html',          'css/modal.css');
   await includeComponent('steam-inventory-placeholder','/html-components/steam-inventory.html','css/steam-inventory.css');

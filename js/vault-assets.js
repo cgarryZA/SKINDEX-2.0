@@ -13,6 +13,8 @@ async function initVaultAssets(){
   const skinsOwned = parseFloat(ethers.utils.formatEther(vaultData.skinsValueWei));
   const nav        = parseFloat(ethers.utils.formatEther(vaultData.vaultValuationWei));
   const ethHeld    = parseFloat(ethers.utils.formatEther(vaultData.ethBalanceWei));
+  const btcHeld    = parseFloat(ethers.utils.formatEther(vaultData.btcReserveWei));
+  const vaultVal   = parseFloat(ethers.utils.formatEther(vaultData.VaultValue));
 
   // 5) compute vault growth % = NAV / ETH‐in * 100
   const vaultGrowth = ethDeposited > 0
@@ -25,5 +27,7 @@ async function initVaultAssets(){
   document.getElementById('ethDepositedValue').textContent  = `${ethDeposited.toFixed(6)} ETH`;
   document.getElementById('ethHeldValue').textContent       = `${ethHeld.toFixed(6)} ETH`;
   document.getElementById('skinsOwnedValue').textContent    = `${skinsOwned.toFixed(6)} ETH`;
+  document.getElementById('btcHeldValue').textContent       = `${btcHeld.toFixed(6)} BTC`;
+  document.getElementById('VaultValue').textContent         = `${vaultVal.toFixed(6)} ETH`;
   document.getElementById('vaultGrowthValue').textContent   = `${vaultGrowth.toFixed(2)} %`;
 }

@@ -10,7 +10,9 @@ header.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 4rem;
   background: radial-gradient(circle at top left, #1e2a3a, #05192b);
 }
 
@@ -39,7 +41,7 @@ header.hero {
 }
 
 .hero-graphic img {
-  max-width: 400px;
+  max-width: 30%;
 }
 
 
@@ -158,7 +160,7 @@ footer nav a {
 }
 
 .text-left .hero-graphic img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   display: block;
 }

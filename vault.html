@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SKINDEX – CSGO Skin ETF</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/vault-card.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script src="js/common.js"></script>
@@ -22,7 +23,56 @@
       <button onclick="window.location.href='mint.html'">Get Started</button>
     </div>
 
-    <div id="vault-assets-placeholder"></div>
+    <!-- Vault banner with ETH / Skins / Growth cards -->
+    <section class="vault-banner">
+      <div class="vault-overlay container2">
+        <!-- Row 1 -->
+        <div class="vault-card">
+          <div class="card-icon">Ξ</div>
+          <div class="card-info">
+            <div class="card-value" id="ethDepositedValue">12.345 ETH</div>
+            <div class="card-label">Deposits</div>
+          </div>
+        </div>
+        <div class="vault-card">
+          <div class="card-icon"></div>
+          <div class="card-info">
+            <div class="card-value" id="VaultValue">12.345 ETH</div>
+            <div class="card-label">Vault Value</div>
+          </div>
+        </div>
+        <div class="vault-card">
+          <div class="card-icon">💹</div>
+          <div class="card-info">
+            <div class="card-value" id="vaultGrowthValue">343.6%</div>
+            <div class="card-label">Vault Growth</div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="vault-card">
+          <div class="card-icon">🎮</div>
+          <div class="card-info">
+            <div class="card-value" id="skinsOwnedValue">42.42 ETH</div>
+            <div class="card-label">Skins Owned</div>
+          </div>
+        </div>
+        <div class="vault-card">
+          <div class="card-icon">₿</div>
+          <div class="card-info">
+            <div class="card-value" id="btcHeldValue">12.345 BTC</div>
+            <div class="card-label">BTC Reserve</div>
+          </div>
+        </div>
+        <div class="vault-card">
+          <div class="card-icon">Ξ</div>
+          <div class="card-info">
+            <div class="card-value" id="ethHeldValue">12.345 ETH</div>
+            <div class="card-label">ETH Held</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="vault-contents container2">
       <div

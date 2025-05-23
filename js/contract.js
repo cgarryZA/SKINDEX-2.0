@@ -24,7 +24,10 @@ const VAULT_ABI = [
   'function setMintFeeBP(uint256)',
   'function setBurnFeeBP(uint256)',
   'function setDeveloperFeeBP(uint256)',
-  'function SendETHToExternalWallet(uint256,address)'
+  'function SendETHToExternalWallet(uint256,address)',
+  'function mintFeeBP()             view returns (uint256)', 
+  'function burnFeeBP()             view returns (uint256)',
+  'function DEV_FEE_BP()            view returns (uint256)',
 ];
 
 // ERC20 ABI for SKINDEX token

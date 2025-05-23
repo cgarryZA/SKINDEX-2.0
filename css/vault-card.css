@@ -293,3 +293,25 @@
   background: #1e40af;           /* hover state from your modal */
   transform: translateY(-2px);   /* subtle lift */
 }
+
+.vault-overlay {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  gap: 2rem;
+  justify-items: center; /* centers each card in its cell */
+  align-items: start;
+  padding: 2rem;
+}
+
+/* Responsive: switch to 1 or 2 columns on narrower screens */
+@media (max-width: 1024px) {
+  .vault-overlay {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .vault-overlay {
+    grid-template-columns: 1fr;
+  }
+}

@@ -20,7 +20,7 @@
     <div id="header-placeholder"></div>
 
     <section id="mint-heading">
-      <h1>Dashboard</h1>
+      <h1>Mint</h1>
       <div id="account">Not connected</div>
     </section>
     <div class="dashboard-container">
@@ -31,22 +31,26 @@
           <div class="stats-item">
             <div class="stat-label">$SKINDEX Price</div>
             <div class="stat-value">
-              <img
-                src="/images/skindex-logo.png"
-                alt="SKINDEX"
-                class="stat-logo"
-              />
+              <div class="stat-logo-box">
+                <img
+                  src="/images/skindex-logo.png"
+                  alt="SKINDEX"
+                  class="stat-logo"
+                />
+              </div>
               <span id="navPerToken">- ETH</span>
             </div>
           </div>
           <div class="stats-item">
             <div class="stat-label">Vault Value</div>
             <div class="stat-value">
-              <img
-                src="/images/skindex-logo.png"
-                alt="SKINDEX"
-                class="stat-logo"
-              />
+              <div class="stat-logo-box">
+                <img
+                  src="/images/eth-logo.png"
+                  alt="SKINDEX"
+                  class="stat-logo"
+                />
+              </div>
               <span id="VaultValue">- ETH</span>
             </div>
           </div>
@@ -57,19 +61,28 @@
         <div class="stats-grid">
           <div class="stats-item">
             <div class="stat-label">$SKINDEX</div>
-            <div class="stat-value">
-              <img
-                src="/images/skindex-logo.png"
-                alt="SKINDEX"
-                class="stat-logo"
-              />
-              <span id="userSK">- (– ETH)</span>
+            <div class="stat-value stat-portfolio-item">
+              <div class="stat-main-row">
+                <div class="stat-logo-box">
+                  <img
+                    src="/images/SKINDEX-LOGO.png"
+                    alt="SKINDEX"
+                    class="stat-logo"
+                  />
+                </div>
+                <span class="primary-value" id="userSKPrimary">-</span>
+              </div>
+              <span class="sub-value" id="userSKSub" style="color: #6b7280"
+                >(- ETH)</span
+              >
             </div>
           </div>
           <div class="stats-item">
             <div class="stat-label">$ETH</div>
             <div class="stat-value">
-              <img src="/images/eth-logo.png" alt="ETH" class="stat-logo" />
+              <div class="stat-logo-box">
+                <img src="/images/ETH-LOGO.png" alt="ETH" class="stat-logo" />
+              </div>
               <span id="userValue">- ETH</span>
             </div>
           </div>
@@ -123,8 +136,15 @@
           <button id="burnBtn" style="pointer-events: all">Burn</button>
         </div>
       </section>
+      <section id="fees" style="padding-left:0px;width:10%;padding-top:5rem">
+        <h2>Current Fees</h2>
+        <div class="fee-info">
+          <div>Mint Fee: <span id="mintFee">–</span>%</div>
+          <div>Dev Fee: <span id="devFee">–</span>%</div>
+          <div>Burn Fee: <span id="burnFee">–</span>%</div>
+        </div>
+      </section>
     </div>
-
     <div id="footer-placeholder"></div>
   </body>
 </html>
