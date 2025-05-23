@@ -1,86 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKINDEX - CSGO Skin ETF</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/vault-assets.js"></script>
-  <script src="js/contract-functions.js"></script>
-  <script src="js/contract.js"></script>
-  <script src="js/index.js"></script>
-</head>
-<body onload="initHomePage()">
-  <header class="hero">
-    <div class="hero-text" style="padding-top: 2rem">
-      <h1>The world's first CSGO skin-backed ETF</h1>
-      <p>Liquid exposure to real, fully-backed, CS2 assets via $SKINDEX</p>
-      <button onclick="window.location.href='vault.html'">Get Started</button>
-    </div>
-    <div class="hero-graphic" style="padding-right: 4rem">
-      <img src="images/logo-nobg.png" alt="SKINDEX Logo" />
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKINDEX - CSGO Skin ETF</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/vault-assets.js"></script>
+    <script src="js/contract-functions.js"></script>
+    <script src="js/contract.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body onload="initHomePage()">
+    <header class="hero">
+      <div class="hero-text" style="padding-top: 2rem">
+        <h1>The world's first CSGO skin-backed ETF</h1>
+        <p>Liquid exposure to real, fully-backed, CS2 assets via $SKINDEX</p>
+        <button onclick="window.location.href='vault.html'">Get Started</button>
+      </div>
+      <div class="hero-graphic" style="padding-right: 4rem">
+        <img src="images/logo-nobg.png" alt="SKINDEX Logo" />
+      </div>
+    </header>
 
-  <div id="vault-assets-placeholder"></div>
+    <div id="vault-assets-placeholder"></div>
 
-  <div class="text-left center-align" style="padding-top: 1rem;">
-    <div>
-      <section class="what-is">
-        <h2>What is SKINDEX?</h2>
-      <p>$SKINDEX is the ticker for the SkinVault ETF. SkinVault tracks the CounterStrike skin market allowing for diversified investments.</p>
-      <p>Every $SKINDEX is backed by assets 1:1</p>
+    <div class="text-left center-align" style="padding-top: 1rem">
+      <div>
+        <section class="what-is">
+          <h2>What is SKINDEX?</h2>
+          <p>
+            $SKINDEX is the ticker for the SkinVault ETF. SkinVault tracks the
+            CounterStrike skin market allowing for diversified investments.
+          </p>
+          <p>Every $SKINDEX is backed by assets 1:1</p>
+          <ul>
+            <li>ETF-style structure</li>
+            <li>Fully trustless smart contracts</li>
+            <li>Vault rebalance and price stabilization</li>
+          </ul>
+        </section>
+      </div>
+      <div class="hero-graphic">
+        <div class="hero-card">
+          <img src="images/marketcap.png" alt="CS2 Market Cap" />
+        </div>
+      </div>
+    </div>
+
+    <section class="how-it-works">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Deposit</h3>
+          <p>
+            Send ETH to mint $SKINDEX at fair NAV (Net Asset Value) of the
+            Vault.
+          </p>
+        </div>
+        <div class="step">
+          <h3>2. Trade</h3>
+          <p>Buy/sell $SKINDEX on supported DEXs.</p>
+        </div>
+        <div class="step">
+          <h3>3. Redeem</h3>
+          <p>Burn tokens to redeem ETH at fair NAV.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-skindex">
+      <h2>Why SKINDEX?</h2>
       <ul>
-        <li>ETF-style structure</li>
-        <li>Fully trustless smart contracts</li>
-        <li>Vault rebalance and price stabilization</li>
+        <li>
+          🏛️ Every dollar deposited is always backed 100% by in-Vault assets
+        </li>
+        <li>🛡️ Vault transparency and automated valuation</li>
+        <li>
+          💹 Earn from short-term trading and long term CS2 market appreciation
+        </li>
+        <li>
+          📉 Hedge your portfolio against volatility by tracking the market as a
+          whole
+        </li>
+        <li>💰 Gain exposure to high-tier items for a fraction of the cost</li>
+        <li>🎮 Powered by real in-game economies</li>
       </ul>
     </section>
-  </div>
-  <div class="hero-graphic">
-    <div class="hero-card">
-      <img src="images/marketcap.png" alt="CS2 Market Cap" />
-    </div>
-  </div>
-</div>
 
-  <section class="how-it-works">
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="step">
-        <h3>1. Deposit</h3>
-        <p>Send ETH to mint $SKINDEX at fair NAV (Net Asset Value) of the Vault.</p>
-      </div>
-      <div class="step">
-        <h3>2. Trade</h3>
-        <p>Buy/sell $SKINDEX on supported DEXs.</p>
-      </div>
-      <div class="step">
-        <h3>3. Redeem</h3>
-        <p>Burn tokens to redeem ETH at fair NAV.</p>
-      </div>
-    </div>
-  </section>
+    <section class="cta" style="padding-left: 0; padding-bottom: 1rem">
+      <h2>Ready to get started?</h2>
+      <button onclick="window.location.href='vault.html'">Get Started</button>
+    </section>
 
-  <section class="why-skindex">
-    <h2>Why SKINDEX?</h2>
-    <ul>
-      <li>🏛️ Every dollar deposited is always backed 100% by in-Vault assets</li>
-      <li>🛡️ Vault transparency and automated valuation</li>
-      <li>💹 Earn from short-term trading and long term CS2 market appreciation</li>
-      <li>📉 Hedge your portfolio against volatility by tracking the market as a whole</li>
-      <li>💰 Gain exposure to high-tier items for a fraction of the cost</li>
-      <li>🎮 Powered by real in-game economies</li>
-    </ul>
-  </section>
-
-  <section class="cta" style="padding-left: 0">
-    <h2>Ready to get started?</h2>
-    <button onclick="window.location.href='vault.html'">Get Started</button>
-  </section>
-
-  <div id="footer-placeholder"></div>
-</body>
+    <div id="footer-placeholder"></div>
+  </body>
 </html>

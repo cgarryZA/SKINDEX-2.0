@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SKINDEX – CSGO Skin ETF</title>
-  <link rel="stylesheet" href="style.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKINDEX – CSGO Skin ETF</title>
+    <link rel="stylesheet" href="style.css" />
 
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/vault-assets.js"></script>
-  <script src="js/vault.js"></script>
-  <script src="js/contract.js"></script>
-  <script src="js/contract-functions.js"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/vault-assets.js"></script>
+    <script src="js/vault.js"></script>
+    <script src="js/contract.js"></script>
+    <script src="js/contract-functions.js"></script>
+  </head>
 
-<body onload="initVaultPage()">
-  <div id="header-placeholder"></div>
-  <div id="vault-assets-placeholder"></div>
-  
-  <section class="vault-contents container2">
-  <div
-    class="vault-contents-card"
-    data-label="High-Tier"
-    data-value="12.345 ETH"
-  >
-    <img src="images/High-Tier.png" alt="High-Tier" class="card-icon"/>
-    <div class="card-info">
-      <div class="card-value">12.345 ETH</div>
-      <div class="card-label">High-Tier</div>
+  <body onload="initVaultPage()">
+    <div id="header-placeholder"></div>
+
+    <div class="vault-heading">
+      <h1>The Vault</h1>
+      <button onclick="window.location.href='mint.html'">Get Started</button>
     </div>
-  </div>
 
-  <div
-    class="vault-contents-card"
-    data-label="Liquid"
-    data-value="42.42 ETH"
-  >
-    <img src="images/Liquid.png" alt="Liquid" class="card-icon"/>
-    <div class="card-info">
-      <div class="card-value">42.42 ETH</div>
-      <div class="card-label">Liquid</div>
-    </div>
-  </div>
+    <div id="vault-assets-placeholder"></div>
 
-  <div
-    class="vault-contents-card"
-    data-label="Cases"
-    data-value="35.22 ETH"
-  >
-    <img src="images/Cases.png" alt="Cases" class="card-icon"/>
-    <div class="card-info">
-      <div class="card-value">35.22 ETH</div>
-      <div class="card-label">Cases</div>
-    </div>
-  </div>
-</section>
-
-  <div class="modal-overlay" id="vault-modal">
-  <div class="modal">
-    <div class="modal-header">
-      <h2 class="modal-title" id="modal-title">Title</h2>
-      <button class="modal-close" id="modal-close">&times;</button>
-    </div>
-    <div class="modal-body" id="modal-body">
-        <!-- 1) Chart placeholder -->
-        <div class="chart-container" id="price-chart">
-          <img src="images/High-Tier-Price-Cap.png" alt="High-Tier" class="card-icon"/>
+    <section class="vault-contents container2">
+      <div
+        class="vault-contents-card"
+        data-label="High-Tier"
+        data-value="12.345 ETH"
+      >
+        <img src="images/High-Tier.png" alt="High-Tier" class="card-icon" />
+        <div class="card-info">
+          <div class="card-value">12.345 ETH</div>
+          <div class="card-label">High-Tier</div>
         </div>
+      </div>
+
+      <div
+        class="vault-contents-card"
+        data-label="Liquid"
+        data-value="42.42 ETH"
+      >
+        <img src="images/Liquid.png" alt="Liquid" class="card-icon" />
+        <div class="card-info">
+          <div class="card-value">42.42 ETH</div>
+          <div class="card-label">Liquid</div>
+        </div>
+      </div>
+
+      <div
+        class="vault-contents-card"
+        data-label="Cases"
+        data-value="35.22 ETH"
+      >
+        <img src="images/Cases.png" alt="Cases" class="card-icon" />
+        <div class="card-info">
+          <div class="card-value">35.22 ETH</div>
+          <div class="card-label">Cases</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="vault-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modal-title">Title</h2>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <!-- 1) Chart placeholder -->
+          <div class="chart-container" id="price-chart">
+            <img
+              src="images/High-Tier-Price-Cap.png"
+              alt="High-Tier"
+              class="modal-chart"
+            />
+          </div>
           <!-- 2) Items grid -->
-        <div class="items-grid" id="items-grid">
-          <!-- injected via JS:
+          <div class="items-grid" id="items-grid">
+            <!-- injected via JS:
           <a href="https://pricempire.com/skin/AWP%20%7C%20Dragon%20Lore" target="_blank">
             <img src="images/dragon-lore.png" alt="AWP | Dragon Lore">
             <div class="item-name">AWP | Dragon Lore</div>
           </a>
-          -->
+          --></div>
         </div>
+        <div class="modal-footer">
+          <button class="modal-close">Close</button>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button class="modal-close">Close</button>
-    </div>
-  </div>
-</div>
 
-
-  <div id="steam-inventory-placeholder"></div>
-  <div id="footer-placeholder"></div>
-</body>
+    <div id="steam-inventory-placeholder"></div>
+    <div id="footer-placeholder"></div>
+  </body>
 </html>

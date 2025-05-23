@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKINDEX – CSGO Skin ETF</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/mint.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/vault-assets.js"></script>
+    <script src="js/vault.js"></script>
+    <script src="js/contract.js"></script>
+    <script src="js/contract-functions.js"></script>
+    <script src="js/mint.js"></script>
+  </head>
+
+  <body onload="initMintPage()">
+    <div id="header-placeholder"></div>
+
+    <section id="mint-heading">
+      <h1>Dashboard</h1>
+      <div id="account">Not connected</div>
+    </section>
+    <div class="dashboard-container">
+      <section id="stats">
+        <!-- SKINDEX section -->
+        <h2>SKINDEX</h2>
+        <div class="stats-grid">
+          <div class="stats-item">
+            <div class="stat-label">$SKINDEX Price</div>
+            <div class="stat-value">
+              <img
+                src="/images/skindex-logo.png"
+                alt="SKINDEX"
+                class="stat-logo"
+              />
+              <span id="navPerToken">- ETH</span>
+            </div>
+          </div>
+          <div class="stats-item">
+            <div class="stat-label">Vault Value</div>
+            <div class="stat-value">
+              <img
+                src="/images/skindex-logo.png"
+                alt="SKINDEX"
+                class="stat-logo"
+              />
+              <span id="VaultValue">- ETH</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Your Portfolio section -->
+        <h2>Your Portfolio</h2>
+        <div class="stats-grid">
+          <div class="stats-item">
+            <div class="stat-label">$SKINDEX</div>
+            <div class="stat-value">
+              <img
+                src="/images/skindex-logo.png"
+                alt="SKINDEX"
+                class="stat-logo"
+              />
+              <span id="userSK">- (– ETH)</span>
+            </div>
+          </div>
+          <div class="stats-item">
+            <div class="stat-label">$ETH</div>
+            <div class="stat-value">
+              <img src="/images/eth-logo.png" alt="ETH" class="stat-logo" />
+              <span id="userValue">- ETH</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="userControls">
+        <h2>Actions</h2>
+
+        <div class="control-group">
+          <label for="mintAmt">Mint SKINDEX:</label>
+          <div class="input-with-max">
+            <input
+              id="mintAmt"
+              type="number"
+              placeholder="ETH amount"
+              step="any"
+              style="pointer-events: all"
+            />
+            <button
+              type="button"
+              id="maxMintBtn"
+              class="max-btn"
+              style="pointer-events: all"
+            >
+              Max
+            </button>
+          </div>
+          <button id="mintBtn" style="pointer-events: all">Mint</button>
+        </div>
+
+        <div class="control-group">
+          <label for="burnAmt">Burn SKINDEX:</label>
+          <div class="input-with-max">
+            <input
+              id="burnAmt"
+              type="number"
+              placeholder="SKINDEX amount"
+              step="any"
+              style="pointer-events: all"
+            />
+            <button
+              type="button"
+              id="maxBurnBtn"
+              class="max-btn"
+              style="pointer-events: all"
+            >
+              Max
+            </button>
+          </div>
+          <button id="burnBtn" style="pointer-events: all">Burn</button>
+        </div>
+      </section>
+    </div>
+
+    <div id="footer-placeholder"></div>
+  </body>
+</html>

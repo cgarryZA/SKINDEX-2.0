@@ -133,7 +133,7 @@
   background: #1f2937;        /* your dark card background */
   color: #e5e7eb;             /* light gray text */
   border-radius: 0.75rem;     /* match card rounding */
-  max-width: 600px;
+  max-width: 90%;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
@@ -173,10 +173,9 @@
 
 /* Body */
 .modal-body {
-  padding: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #d1d5db;
+  display: flex;
+  gap: 2rem;               /* space between chart and grid */
+  flex-wrap: wrap;         /* fall back to vertical on small viewports */
 }
 
 /* Section title inside modal */
@@ -189,6 +188,10 @@
 
 /* Graph container */
 .modal-body .chart-container {
+  padding-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* if you also want vertical centering */  
   background: #111827;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -196,11 +199,19 @@
   /* your chart (canvas/svg) will fill this */
 }
 
+.modal-body .chart-container {
+  flex: 0 0 33.33%;
+}
+
 /* Items grid */
 .modal-body .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 1rem;
+}
+
+.modal-body .items-grid {
+  flex: 0 0 66.66%;
 }
 
 /* Each item card inside modal */
@@ -252,4 +263,33 @@
 }
 .modal-footer button:hover {
   background: #1e40af;
+}
+
+.modal-chart {
+  width: 100%;
+  margin: 0 auto;   /* centers it horizontally */
+  display: block;   /* ensure margin auto takes effect on inline elements */
+}
+
+.vault-heading {
+  display: flex;
+  justify-content: space-between; /* vault on left, button on right */
+  align-items: center;            /* vertically center them */
+  padding: 1rem 6rem;             /* top/bottom 1rem, left/right 6rem */
+}
+
+.vault-heading button {
+  background: #2563eb;           /* match your modal-footer buttons */
+  color: #f9fafb;
+  padding: 0.75rem 2rem;         /* bigger click target */
+  font-size: 1.125rem;           /* slightly larger text */
+  border-radius: 0.75rem;        /* consistent rounding */
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.vault-heading button:hover {
+  background: #1e40af;           /* hover state from your modal */
+  transform: translateY(-2px);   /* subtle lift */
 }

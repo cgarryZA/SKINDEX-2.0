@@ -1,0 +1,316 @@
+/* ─────────────────────────────────────────
+   Base page styles
+───────────────────────────────────────── */
+body {
+  background: #111827;         /* dark page background */
+  color: #e5e7eb;              /* light text */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────
+   Header / Mint Heading
+───────────────────────────────────────── */
+#mint-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;         /* dark card color */
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #374151;
+}
+
+#mint-heading h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #f9fafb;
+}
+
+#mint-heading #account {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+/* ─────────────────────────────────────────
+   Dashboard Layout
+───────────────────────────────────────── */
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;           /* stretch both panels to same height */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* give both panels the same flex basis and extra padding */
+.dashboard-container > #stats,
+.dashboard-container > #userControls {
+  flex: 1 1 45%;                  /* each takes ~45% of width */
+  padding: 3rem;                  /* bump up from 2rem for a larger “window” */
+}
+
+/* remove any leftover vertical margins */
+#stats,
+#userControls {
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────
+   Stats Section
+───────────────────────────────────────── */
+#stats {
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 0;                       /* remove previous vertical margin */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+#stats h2 {
+  grid-column: 1 / -1;             /* headings span full width */
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: #f9fafb;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+}
+
+#stats p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+#stats span {
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+/* ─────────────────────────────────────────
+   User Controls Section
+───────────────────────────────────────── */
+#userControls {
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin: 0;                       /* remove previous vertical margin */
+}
+
+#userControls h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: #f9fafb;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+}
+
+/* each label + input-with-max + action button row */
+#userControls .control-group {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#userControls label {
+  margin: 0;
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+#userControls input {
+  background: #374151;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: #e5e7eb;
+  width: 75%;
+}
+
+#userControls input::placeholder {
+  color: #9ca3af;
+}
+
+#userControls button {
+  background: #2563eb;
+  color: #f9fafb;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#userControls button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────
+   Max-button & Input-with-Max Styles
+───────────────────────────────────────── */
+.input-with-max {
+  position: relative;
+}
+
+.input-with-max input {
+  padding-right: 3.5rem;          /* room for max button */
+}
+
+/* Override Max buttons to match Mint/Burn buttons */
+.max-btn {
+  background: #2563eb;           /* same blue */
+  color: #f9fafb;                /* same white text */
+  border: none;
+  border-radius: 0.75rem;        /* same rounding */
+  padding: 0.75rem 1.5rem;       /* same size */
+  font-size: 1rem;               /* same font-size */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s; /* same hover behavior */
+  position: static;              /* reset absolute positioning */
+  transform: none;               /* reset any transforms */
+  margin-left: 0.5rem;           /* give a bit of space from the input */
+}
+
+.max-btn:hover {
+  background: #1e40af;           /* same hover color */
+  transform: translateY(-2px);   /* same lift */
+}
+
+/* ─────────────────────────────────────────
+   Pointer-events Fix for Full-Page Overlays
+───────────────────────────────────────── */
+#header-placeholder,
+#footer-placeholder {
+  pointer-events: none;
+}
+
+#header-placeholder *, 
+#footer-placeholder * {
+  pointer-events: auto;
+}
+
+/* ─────────────────────────────────────────
+   Responsive Adjustments
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .dashboard-container > section {
+    width: 100%;
+  }
+
+  #mint-heading,
+  #stats,
+  #userControls {
+    padding: 1rem;
+  }
+
+  #stats {
+    grid-template-columns: 1fr;
+  }
+
+  #userControls .control-group {
+    grid-template-columns: 1fr auto auto;
+  }
+}
+
+/* ─────────────────────────────────────────
+   Per-control layout: vertical stack
+───────────────────────────────────────── */
+#userControls .control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* everything left-aligned */
+  gap: 0.5rem;               /* small gap between label, input, button */
+}
+
+/* ─────────────────────────────────────────
+   Input + Max button combo
+───────────────────────────────────────── */
+.input-with-max {
+  position: relative;
+  width: 100%;               /* fill the panel’s width */
+}
+
+.input-with-max input {
+  width: 100%;
+  padding-right: 3rem;       /* space for Max button */
+}
+
+.input-with-max .max-btn {
+  position: absolute;
+  top: 0px;
+  right: 0.5rem;
+  /* match your other action buttons: */
+  background: #2563eb;
+  color: #f9fafb;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.input-with-max .max-btn:hover {
+  background: #1e40af;
+}
+
+/* ─────────────────────────────────────────
+   Mint/Burn button under the input
+───────────────────────────────────────── */
+/* ensure the action button lines up with the text box */
+#userControls .control-group > button {
+  align-self: flex-start;   /* left-edge align under input */
+  margin: 0;                /* remove any old lateral margins */
+}
+
+/* ——————————————————————————————————————————————————
+   Stats grid: two columns under each heading
+—————————————————————————————————————————————————— */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;     /* row-gap 1.5rem, col-gap 2rem */
+  margin-bottom: 2rem;
+}
+
+/* each label+value pair */
+.stats-item {  
+  display: flex;
+  flex-direction: column;
+}
+
+/* the label above the logo+value */
+.stat-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+/* container for logo + text */
+.stat-value {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* logo sizing */
+.stat-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
